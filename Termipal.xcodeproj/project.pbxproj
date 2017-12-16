@@ -1,0 +1,507 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5A6F243C1FE331DF0021F933 /* PalBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6F243B1FE331DF0021F933 /* PalBaseView.m */; };
+		5A6F243D1FE331DF0021F933 /* PalBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6F243B1FE331DF0021F933 /* PalBaseView.m */; };
+		5A6F24401FE337080021F933 /* PalBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6F243F1FE337080021F933 /* PalBaseViewController.m */; };
+		5A6F24411FE337080021F933 /* PalBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6F243F1FE337080021F933 /* PalBaseViewController.m */; };
+		5A6F24441FE3BEC80021F933 /* AxWindowWatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6F24431FE3BEC80021F933 /* AxWindowWatcher.m */; };
+		5A6F24451FE3BEC80021F933 /* AxWindowWatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6F24431FE3BEC80021F933 /* AxWindowWatcher.m */; };
+		5A6F2AA11FE468520021F933 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A6F2AA01FE468520021F933 /* JavaScriptCore.framework */; };
+		5A6F2AA51FE468980021F933 /* ENOJavaScriptApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6F2AA41FE468970021F933 /* ENOJavaScriptApp.m */; };
+		5A6F2AA61FE468980021F933 /* ENOJavaScriptApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6F2AA41FE468970021F933 /* ENOJavaScriptApp.m */; };
+		5A6F2AAC1FE46A3D0021F933 /* ENOJSApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6F2AAA1FE46A3D0021F933 /* ENOJSApp.m */; };
+		5A6F2AAD1FE46A3D0021F933 /* ENOJSApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6F2AAA1FE46A3D0021F933 /* ENOJSApp.m */; };
+		5A6F2AB61FE46AA60021F933 /* ENOJSPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6F2AAF1FE46AA50021F933 /* ENOJSPath.m */; };
+		5A6F2AB71FE46AA60021F933 /* ENOJSPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6F2AAF1FE46AA50021F933 /* ENOJSPath.m */; };
+		5A6F2AB81FE46AA60021F933 /* ENOJSUrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6F2AB11FE46AA60021F933 /* ENOJSUrl.m */; };
+		5A6F2AB91FE46AA60021F933 /* ENOJSUrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6F2AB11FE46AA60021F933 /* ENOJSUrl.m */; };
+		5A6F2ABA1FE46AA60021F933 /* ENOJSConsole.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6F2AB41FE46AA60021F933 /* ENOJSConsole.m */; };
+		5A6F2ABB1FE46AA60021F933 /* ENOJSConsole.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6F2AB41FE46AA60021F933 /* ENOJSConsole.m */; };
+		5A6F2ABC1FE46AA60021F933 /* ENOJSProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6F2AB51FE46AA60021F933 /* ENOJSProcess.m */; };
+		5A6F2ABD1FE46AA60021F933 /* ENOJSProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6F2AB51FE46AA60021F933 /* ENOJSProcess.m */; };
+		5AB1A7D91FD3BF2B004345D1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A4D56021C726ADC0090B161 /* main.m */; };
+		5AB1A7DA1FD3BF2B004345D1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A4D55FF1C726ADB0090B161 /* AppDelegate.m */; };
+		5AB1A7DB1FD3BF2B004345D1 /* PalAttachedWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A4AFCBD1CA473AE0072C539 /* PalAttachedWindow.m */; };
+		5AB1A7DE1FD3BF2B004345D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A4D56041C726ADC0090B161 /* Assets.xcassets */; };
+		5AB1A7DF1FD3BF2B004345D1 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A4D56061C726ADC0090B161 /* MainMenu.xib */; };
+		5AB1A7EB1FD3C654004345D1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AB1A7EA1FD3C654004345D1 /* main.m */; };
+		5AB1A7EF1FD3C6DB004345D1 /* PalAttachedWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A4AFCBD1CA473AE0072C539 /* PalAttachedWindow.m */; };
+		5AB1A7F01FD3C6E4004345D1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A4D55FF1C726ADB0090B161 /* AppDelegate.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5AB1A7E61FD3C654004345D1 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		5A4AFCBC1CA473AE0072C539 /* PalAttachedWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PalAttachedWindow.h; sourceTree = "<group>"; };
+		5A4AFCBD1CA473AE0072C539 /* PalAttachedWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PalAttachedWindow.m; sourceTree = "<group>"; };
+		5A4D55FE1C726ADB0090B161 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		5A4D55FF1C726ADB0090B161 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		5A4D56021C726ADC0090B161 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5A4D56041C726ADC0090B161 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5A4D56071C726ADC0090B161 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		5A4D56091C726ADC0090B161 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A6F243A1FE331DF0021F933 /* PalBaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PalBaseView.h; sourceTree = "<group>"; };
+		5A6F243B1FE331DF0021F933 /* PalBaseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PalBaseView.m; sourceTree = "<group>"; };
+		5A6F243E1FE337080021F933 /* PalBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PalBaseViewController.h; sourceTree = "<group>"; };
+		5A6F243F1FE337080021F933 /* PalBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PalBaseViewController.m; sourceTree = "<group>"; };
+		5A6F24421FE3BEC80021F933 /* AxWindowWatcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AxWindowWatcher.h; sourceTree = "<group>"; };
+		5A6F24431FE3BEC80021F933 /* AxWindowWatcher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AxWindowWatcher.m; sourceTree = "<group>"; };
+		5A6F2AA01FE468520021F933 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		5A6F2AA31FE468970021F933 /* ENOJavaScriptApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ENOJavaScriptApp.h; sourceTree = "<group>"; };
+		5A6F2AA41FE468970021F933 /* ENOJavaScriptApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ENOJavaScriptApp.m; sourceTree = "<group>"; };
+		5A6F2AAA1FE46A3D0021F933 /* ENOJSApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ENOJSApp.m; sourceTree = "<group>"; };
+		5A6F2AAB1FE46A3D0021F933 /* ENOJSApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ENOJSApp.h; sourceTree = "<group>"; };
+		5A6F2AAE1FE46AA50021F933 /* ENOJSPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ENOJSPath.h; sourceTree = "<group>"; };
+		5A6F2AAF1FE46AA50021F933 /* ENOJSPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ENOJSPath.m; sourceTree = "<group>"; };
+		5A6F2AB01FE46AA50021F933 /* ENOJSUrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ENOJSUrl.h; sourceTree = "<group>"; };
+		5A6F2AB11FE46AA60021F933 /* ENOJSUrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ENOJSUrl.m; sourceTree = "<group>"; };
+		5A6F2AB21FE46AA60021F933 /* ENOJSProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ENOJSProcess.h; sourceTree = "<group>"; };
+		5A6F2AB31FE46AA60021F933 /* ENOJSConsole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ENOJSConsole.h; sourceTree = "<group>"; };
+		5A6F2AB41FE46AA60021F933 /* ENOJSConsole.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ENOJSConsole.m; sourceTree = "<group>"; };
+		5A6F2AB51FE46AA60021F933 /* ENOJSProcess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ENOJSProcess.m; sourceTree = "<group>"; };
+		5AB1A7E31FD3BF2B004345D1 /* Termipal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Termipal.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AB1A7E81FD3C654004345D1 /* TermipalUtil */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TermipalUtil; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AB1A7EA1FD3C654004345D1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5AB1A7DC1FD3BF2B004345D1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AB1A7E51FD3C654004345D1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A6F2AA11FE468520021F933 /* JavaScriptCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5A4D55F21C726ADB0090B161 = {
+			isa = PBXGroup;
+			children = (
+				5A4D55FD1C726ADB0090B161 /* Termipal */,
+				5AB1A7E91FD3C654004345D1 /* TermipalUtil */,
+				5A4D55FC1C726ADB0090B161 /* Products */,
+				5A6F2A9F1FE468520021F933 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		5A4D55FC1C726ADB0090B161 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5AB1A7E31FD3BF2B004345D1 /* Termipal.app */,
+				5AB1A7E81FD3C654004345D1 /* TermipalUtil */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5A4D55FD1C726ADB0090B161 /* Termipal */ = {
+			isa = PBXGroup;
+			children = (
+				5A6F2AA21FE468790021F933 /* JS Execution */,
+				5A6F24421FE3BEC80021F933 /* AxWindowWatcher.h */,
+				5A6F24431FE3BEC80021F933 /* AxWindowWatcher.m */,
+				5A4D55FE1C726ADB0090B161 /* AppDelegate.h */,
+				5A4D55FF1C726ADB0090B161 /* AppDelegate.m */,
+				5A4D56041C726ADC0090B161 /* Assets.xcassets */,
+				5A4D56061C726ADC0090B161 /* MainMenu.xib */,
+				5A4D56091C726ADC0090B161 /* Info.plist */,
+				5A4D56011C726ADC0090B161 /* Supporting Files */,
+				5A4AFCBC1CA473AE0072C539 /* PalAttachedWindow.h */,
+				5A4AFCBD1CA473AE0072C539 /* PalAttachedWindow.m */,
+				5A6F243A1FE331DF0021F933 /* PalBaseView.h */,
+				5A6F243B1FE331DF0021F933 /* PalBaseView.m */,
+				5A6F243E1FE337080021F933 /* PalBaseViewController.h */,
+				5A6F243F1FE337080021F933 /* PalBaseViewController.m */,
+			);
+			path = Termipal;
+			sourceTree = "<group>";
+		};
+		5A4D56011C726ADC0090B161 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5A4D56021C726ADC0090B161 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5A6F2A9F1FE468520021F933 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5A6F2AA01FE468520021F933 /* JavaScriptCore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5A6F2AA21FE468790021F933 /* JS Execution */ = {
+			isa = PBXGroup;
+			children = (
+				5A6F2AA31FE468970021F933 /* ENOJavaScriptApp.h */,
+				5A6F2AA41FE468970021F933 /* ENOJavaScriptApp.m */,
+				5A6F2AAB1FE46A3D0021F933 /* ENOJSApp.h */,
+				5A6F2AAA1FE46A3D0021F933 /* ENOJSApp.m */,
+				5A6F2AAE1FE46AA50021F933 /* ENOJSPath.h */,
+				5A6F2AAF1FE46AA50021F933 /* ENOJSPath.m */,
+				5A6F2AB01FE46AA50021F933 /* ENOJSUrl.h */,
+				5A6F2AB11FE46AA60021F933 /* ENOJSUrl.m */,
+				5A6F2AB31FE46AA60021F933 /* ENOJSConsole.h */,
+				5A6F2AB41FE46AA60021F933 /* ENOJSConsole.m */,
+				5A6F2AB21FE46AA60021F933 /* ENOJSProcess.h */,
+				5A6F2AB51FE46AA60021F933 /* ENOJSProcess.m */,
+			);
+			name = "JS Execution";
+			sourceTree = "<group>";
+		};
+		5AB1A7E91FD3C654004345D1 /* TermipalUtil */ = {
+			isa = PBXGroup;
+			children = (
+				5AB1A7EA1FD3C654004345D1 /* main.m */,
+			);
+			path = TermipalUtil;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5AB1A7D71FD3BF2B004345D1 /* Termipal */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5AB1A7E01FD3BF2B004345D1 /* Build configuration list for PBXNativeTarget "Termipal" */;
+			buildPhases = (
+				5AB1A7D81FD3BF2B004345D1 /* Sources */,
+				5AB1A7DC1FD3BF2B004345D1 /* Frameworks */,
+				5AB1A7DD1FD3BF2B004345D1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Termipal;
+			productName = WindowStalker;
+			productReference = 5AB1A7E31FD3BF2B004345D1 /* Termipal.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5AB1A7E71FD3C654004345D1 /* TermipalUtil */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5AB1A7EC1FD3C654004345D1 /* Build configuration list for PBXNativeTarget "TermipalUtil" */;
+			buildPhases = (
+				5AB1A7E41FD3C654004345D1 /* Sources */,
+				5AB1A7E51FD3C654004345D1 /* Frameworks */,
+				5AB1A7E61FD3C654004345D1 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TermipalUtil;
+			productName = TermipalUtil;
+			productReference = 5AB1A7E81FD3C654004345D1 /* TermipalUtil */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5A4D55F31C726ADB0090B161 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = Lacquer;
+				TargetAttributes = {
+					5AB1A7E71FD3C654004345D1 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 5A4D55F61C726ADB0090B161 /* Build configuration list for PBXProject "Termipal" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5A4D55F21C726ADB0090B161;
+			productRefGroup = 5A4D55FC1C726ADB0090B161 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5AB1A7D71FD3BF2B004345D1 /* Termipal */,
+				5AB1A7E71FD3C654004345D1 /* TermipalUtil */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5AB1A7DD1FD3BF2B004345D1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AB1A7DE1FD3BF2B004345D1 /* Assets.xcassets in Resources */,
+				5AB1A7DF1FD3BF2B004345D1 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5AB1A7D81FD3BF2B004345D1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A6F24441FE3BEC80021F933 /* AxWindowWatcher.m in Sources */,
+				5A6F24401FE337080021F933 /* PalBaseViewController.m in Sources */,
+				5A6F2ABC1FE46AA60021F933 /* ENOJSProcess.m in Sources */,
+				5A6F2AAC1FE46A3D0021F933 /* ENOJSApp.m in Sources */,
+				5A6F243C1FE331DF0021F933 /* PalBaseView.m in Sources */,
+				5AB1A7D91FD3BF2B004345D1 /* main.m in Sources */,
+				5A6F2AB61FE46AA60021F933 /* ENOJSPath.m in Sources */,
+				5AB1A7DA1FD3BF2B004345D1 /* AppDelegate.m in Sources */,
+				5AB1A7DB1FD3BF2B004345D1 /* PalAttachedWindow.m in Sources */,
+				5A6F2AB81FE46AA60021F933 /* ENOJSUrl.m in Sources */,
+				5A6F2AA51FE468980021F933 /* ENOJavaScriptApp.m in Sources */,
+				5A6F2ABA1FE46AA60021F933 /* ENOJSConsole.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AB1A7E41FD3C654004345D1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A6F24451FE3BEC80021F933 /* AxWindowWatcher.m in Sources */,
+				5A6F24411FE337080021F933 /* PalBaseViewController.m in Sources */,
+				5A6F2ABD1FE46AA60021F933 /* ENOJSProcess.m in Sources */,
+				5A6F2AAD1FE46A3D0021F933 /* ENOJSApp.m in Sources */,
+				5A6F243D1FE331DF0021F933 /* PalBaseView.m in Sources */,
+				5AB1A7EF1FD3C6DB004345D1 /* PalAttachedWindow.m in Sources */,
+				5A6F2AB71FE46AA60021F933 /* ENOJSPath.m in Sources */,
+				5AB1A7EB1FD3C654004345D1 /* main.m in Sources */,
+				5AB1A7F01FD3C6E4004345D1 /* AppDelegate.m in Sources */,
+				5A6F2AB91FE46AA60021F933 /* ENOJSUrl.m in Sources */,
+				5A6F2AA61FE468980021F933 /* ENOJavaScriptApp.m in Sources */,
+				5A6F2ABB1FE46AA60021F933 /* ENOJSConsole.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5A4D56061C726ADC0090B161 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5A4D56071C726ADC0090B161 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5A4D560A1C726ADC0090B161 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		5A4D560B1C726ADC0090B161 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		5AB1A7E11FD3BF2B004345D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/Termipal/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = fi.lacquer.WindowStalker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		5AB1A7E21FD3BF2B004345D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/Termipal/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = fi.lacquer.WindowStalker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		5AB1A7ED1FD3C654004345D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		5AB1A7EE1FD3C654004345D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5A4D55F61C726ADB0090B161 /* Build configuration list for PBXProject "Termipal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A4D560A1C726ADC0090B161 /* Debug */,
+				5A4D560B1C726ADC0090B161 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5AB1A7E01FD3BF2B004345D1 /* Build configuration list for PBXNativeTarget "Termipal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5AB1A7E11FD3BF2B004345D1 /* Debug */,
+				5AB1A7E21FD3BF2B004345D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5AB1A7EC1FD3C654004345D1 /* Build configuration list for PBXNativeTarget "TermipalUtil" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5AB1A7ED1FD3C654004345D1 /* Debug */,
+				5AB1A7EE1FD3C654004345D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5A4D55F31C726ADB0090B161 /* Project object */;
+}
