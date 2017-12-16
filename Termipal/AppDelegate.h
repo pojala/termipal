@@ -30,13 +30,12 @@
 @property (strong) IBOutlet PalAttachedWindow *window;
 
 @property (strong) AxWindowWatcher *axWindowWatcher;
-@property (assign) BOOL inStalkerAction;
 
+@property (strong) NSString *versionString;
 @property (strong) NSString *watchedAppId;
 @property (strong) NSString *mainJSProgram;
 @property (strong) NSArray *mainUIDefinition;
 
-@property (strong) NSString *versionString;
 
 - (void)exitAndReactivateOriginal;
 

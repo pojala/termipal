@@ -1,6 +1,6 @@
 //
-//  StalkerWindow.h
-//  TermStalker
+//  PalAttachedWindow.h
+//  Termipal
 //
 //  Created by Pauli Ojala on 24/03/16.
 //  Copyright © 2017 Pauli Olavi Ojala.
