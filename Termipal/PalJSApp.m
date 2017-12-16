@@ -1,25 +1,43 @@
 //
-//  ENOJSApp.m
-//  Electrino
+//  PalJSApp.m
+//  Termipal
 //
 //  Created by Pauli Olavi Ojala on 03/05/17.
 //  Copyright © 2017 Pauli Olavi Ojala.
 //
-//  This software may be modified and distributed under the terms of the MIT license.  See the LICENSE file for details.
-//
+/*
+ Termipal is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+ 
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ 
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
 
-#import "ENOJSApp.h"
+#import <AppKit/AppKit.h>
+#import "PalJSApp.h"
 #import "ENOJavaScriptApp.h"
+#import "PalBaseViewController.h"
+#import "AxWindowWatcher.h"
 
 
-@interface ENOJSApp ()
+@interface PalJSApp ()
 
 @property (nonatomic, strong) NSMutableDictionary *eventCallbacks;
 
 @end
 
 
-@implementation ENOJSApp
+@implementation PalJSApp
+
+@synthesize openUrl;
+@synthesize alert;
 
 - (id)init
 {
@@ -27,6 +45,27 @@
     
     self.eventCallbacks = [NSMutableDictionary dictionary];
     
+    __weak PalJSApp *me = self;
+    
+    self.openUrl = ^(NSString *urlStr) {
+        if (urlStr.length < 1)
+            return; // --
+        
+        // toggle this flag so that the floater window gets hidden when the browser opens
+        me.axWindowWatcher.insideUserActionInFloater = NO;
+        
+        NSURL *url = [NSURL URLWithString:urlStr];
+        [[NSWorkspace sharedWorkspace] openURL:url];
+    };
+    
+    self.alert = ^(NSString *str) {
+        NSAlert *alert = [[NSAlert alloc] init];
+        [alert setAlertStyle:NSAlertStyleInformational];
+        [alert addButtonWithTitle:@"Ok"];
+        [alert setMessageText:str ?: @"(No message provided)"];
+        [alert runModal];
+    };
+
     return self;
 }
 
@@ -86,6 +125,11 @@
         }
     }
     return YES;
+}
+
+- (NSDictionary *)currentUIValues
+{
+    return self.palBaseViewController.actionResultValuesByViewId;
 }
 
 @end

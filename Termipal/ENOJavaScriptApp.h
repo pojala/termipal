@@ -10,7 +10,7 @@
 
 #import <Foundation/Foundation.h>
 #import <JavaScriptCore/JavaScriptCore.h>
-#import "ENOJSApp.h"
+#import "PalJSApp.h"
 
 
 extern NSString * const kENOJavaScriptErrorDomain;
@@ -18,11 +18,11 @@ extern NSString * const kENOJavaScriptErrorDomain;
 
 @interface ENOJavaScriptApp : NSObject
 
-+ (instancetype)sharedApp;
+- (id)initWithVersion:(NSString *)version;
 
 @property (nonatomic, readonly) JSContext *jsContext;
 
-@property (nonatomic, readonly) ENOJSApp *jsAppGlobalObject;
+@property (nonatomic, readonly) PalJSApp *jsAppGlobalObject;
 
 @property (nonatomic, strong) NSString *lastException;
 @property (nonatomic, assign) NSInteger lastExceptionLine;

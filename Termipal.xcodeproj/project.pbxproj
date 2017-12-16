@@ -16,8 +16,8 @@
 		5A6F2AA11FE468520021F933 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A6F2AA01FE468520021F933 /* JavaScriptCore.framework */; };
 		5A6F2AA51FE468980021F933 /* ENOJavaScriptApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6F2AA41FE468970021F933 /* ENOJavaScriptApp.m */; };
 		5A6F2AA61FE468980021F933 /* ENOJavaScriptApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6F2AA41FE468970021F933 /* ENOJavaScriptApp.m */; };
-		5A6F2AAC1FE46A3D0021F933 /* ENOJSApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6F2AAA1FE46A3D0021F933 /* ENOJSApp.m */; };
-		5A6F2AAD1FE46A3D0021F933 /* ENOJSApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6F2AAA1FE46A3D0021F933 /* ENOJSApp.m */; };
+		5A6F2AAC1FE46A3D0021F933 /* PalJSApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6F2AAA1FE46A3D0021F933 /* PalJSApp.m */; };
+		5A6F2AAD1FE46A3D0021F933 /* PalJSApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6F2AAA1FE46A3D0021F933 /* PalJSApp.m */; };
 		5A6F2AB61FE46AA60021F933 /* ENOJSPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6F2AAF1FE46AA50021F933 /* ENOJSPath.m */; };
 		5A6F2AB71FE46AA60021F933 /* ENOJSPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6F2AAF1FE46AA50021F933 /* ENOJSPath.m */; };
 		5A6F2AB81FE46AA60021F933 /* ENOJSUrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6F2AB11FE46AA60021F933 /* ENOJSUrl.m */; };
@@ -66,8 +66,8 @@
 		5A6F2AA01FE468520021F933 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		5A6F2AA31FE468970021F933 /* ENOJavaScriptApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ENOJavaScriptApp.h; sourceTree = "<group>"; };
 		5A6F2AA41FE468970021F933 /* ENOJavaScriptApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ENOJavaScriptApp.m; sourceTree = "<group>"; };
-		5A6F2AAA1FE46A3D0021F933 /* ENOJSApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ENOJSApp.m; sourceTree = "<group>"; };
-		5A6F2AAB1FE46A3D0021F933 /* ENOJSApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ENOJSApp.h; sourceTree = "<group>"; };
+		5A6F2AAA1FE46A3D0021F933 /* PalJSApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PalJSApp.m; sourceTree = "<group>"; };
+		5A6F2AAB1FE46A3D0021F933 /* PalJSApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PalJSApp.h; sourceTree = "<group>"; };
 		5A6F2AAE1FE46AA50021F933 /* ENOJSPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ENOJSPath.h; sourceTree = "<group>"; };
 		5A6F2AAF1FE46AA50021F933 /* ENOJSPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ENOJSPath.m; sourceTree = "<group>"; };
 		5A6F2AB01FE46AA50021F933 /* ENOJSUrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ENOJSUrl.h; sourceTree = "<group>"; };
@@ -77,7 +77,7 @@
 		5A6F2AB41FE46AA60021F933 /* ENOJSConsole.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ENOJSConsole.m; sourceTree = "<group>"; };
 		5A6F2AB51FE46AA60021F933 /* ENOJSProcess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ENOJSProcess.m; sourceTree = "<group>"; };
 		5AB1A7E31FD3BF2B004345D1 /* Termipal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Termipal.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		5AB1A7E81FD3C654004345D1 /* TermipalUtil */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TermipalUtil; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AB1A7E81FD3C654004345D1 /* pal */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = pal; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AB1A7EA1FD3C654004345D1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -114,7 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				5AB1A7E31FD3BF2B004345D1 /* Termipal.app */,
-				5AB1A7E81FD3C654004345D1 /* TermipalUtil */,
+				5AB1A7E81FD3C654004345D1 /* pal */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -162,8 +162,8 @@
 			children = (
 				5A6F2AA31FE468970021F933 /* ENOJavaScriptApp.h */,
 				5A6F2AA41FE468970021F933 /* ENOJavaScriptApp.m */,
-				5A6F2AAB1FE46A3D0021F933 /* ENOJSApp.h */,
-				5A6F2AAA1FE46A3D0021F933 /* ENOJSApp.m */,
+				5A6F2AAB1FE46A3D0021F933 /* PalJSApp.h */,
+				5A6F2AAA1FE46A3D0021F933 /* PalJSApp.m */,
 				5A6F2AAE1FE46AA50021F933 /* ENOJSPath.h */,
 				5A6F2AAF1FE46AA50021F933 /* ENOJSPath.m */,
 				5A6F2AB01FE46AA50021F933 /* ENOJSUrl.h */,
@@ -218,7 +218,7 @@
 			);
 			name = TermipalUtil;
 			productName = TermipalUtil;
-			productReference = 5AB1A7E81FD3C654004345D1 /* TermipalUtil */;
+			productReference = 5AB1A7E81FD3C654004345D1 /* pal */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -275,7 +275,7 @@
 				5A6F24441FE3BEC80021F933 /* AxWindowWatcher.m in Sources */,
 				5A6F24401FE337080021F933 /* PalBaseViewController.m in Sources */,
 				5A6F2ABC1FE46AA60021F933 /* ENOJSProcess.m in Sources */,
-				5A6F2AAC1FE46A3D0021F933 /* ENOJSApp.m in Sources */,
+				5A6F2AAC1FE46A3D0021F933 /* PalJSApp.m in Sources */,
 				5A6F243C1FE331DF0021F933 /* PalBaseView.m in Sources */,
 				5AB1A7D91FD3BF2B004345D1 /* main.m in Sources */,
 				5A6F2AB61FE46AA60021F933 /* ENOJSPath.m in Sources */,
@@ -294,7 +294,7 @@
 				5A6F24451FE3BEC80021F933 /* AxWindowWatcher.m in Sources */,
 				5A6F24411FE337080021F933 /* PalBaseViewController.m in Sources */,
 				5A6F2ABD1FE46AA60021F933 /* ENOJSProcess.m in Sources */,
-				5A6F2AAD1FE46A3D0021F933 /* ENOJSApp.m in Sources */,
+				5A6F2AAD1FE46A3D0021F933 /* PalJSApp.m in Sources */,
 				5A6F243D1FE331DF0021F933 /* PalBaseView.m in Sources */,
 				5AB1A7EF1FD3C6DB004345D1 /* PalAttachedWindow.m in Sources */,
 				5A6F2AB71FE46AA60021F933 /* ENOJSPath.m in Sources */,
@@ -444,7 +444,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = pal;
 			};
 			name = Debug;
 		};
@@ -467,7 +467,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = pal;
 			};
 			name = Release;
 		};

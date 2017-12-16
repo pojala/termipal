@@ -17,15 +17,13 @@
 @synthesize versions;
 
 
-- (id)init
+- (id)initWithVersions:(NSDictionary *)versions
 {
     self = [super init];
     
     self.platform = @"darwin";
     
-    self.versions = @{
-                      @"electrino": @"0.0.1"
-                      };
+    self.versions = versions;
     
     return self;
 }

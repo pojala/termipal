@@ -22,4 +22,6 @@
 
 @interface ENOJSProcess : NSObject <ENOJSProcessExports>
 
+- (id)initWithVersions:(NSDictionary *)versions;
+
 @end

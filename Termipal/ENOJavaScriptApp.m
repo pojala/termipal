@@ -11,7 +11,7 @@
 #import "ENOJavaScriptApp.h"
 #import "ENOJSPath.h"
 #import "ENOJSUrl.h"
-#import "ENOJSApp.h"
+#import "PalJSApp.h"
 #import "ENOJSProcess.h"
 #import "ENOJSConsole.h"
 
@@ -24,7 +24,7 @@ NSString * const kENOJavaScriptErrorDomain = @"ENOJavaScriptErrorDomain";
 @property (nonatomic, strong) JSVirtualMachine *jsVM;
 @property (nonatomic, strong) JSContext *jsContext;
 @property (nonatomic, strong) NSDictionary *jsModules;
-@property (nonatomic, strong) ENOJSApp *jsAppGlobalObject;
+@property (nonatomic, strong) PalJSApp *jsAppGlobalObject;
 
 @property (nonatomic, assign) BOOL inException;
 
@@ -33,17 +33,7 @@ NSString * const kENOJavaScriptErrorDomain = @"ENOJavaScriptErrorDomain";
 
 @implementation ENOJavaScriptApp
 
-+ (instancetype)sharedApp
-{
-    static ENOJavaScriptApp *s_app = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        s_app = [[self alloc] init];
-    });
-    return s_app;
-}
-
-- (id)init
+- (id)initWithVersion:(NSString *)version
 {
     self = [super init];
     
@@ -51,10 +41,10 @@ NSString * const kENOJavaScriptErrorDomain = @"ENOJavaScriptErrorDomain";
     self.jsVM = [[JSVirtualMachine alloc] init];
     self.jsContext = [[JSContext alloc] initWithVirtualMachine:self.jsVM];
     
-    self.jsAppGlobalObject = [[ENOJSApp alloc] init];
+    self.jsAppGlobalObject = [[PalJSApp alloc] init];
     self.jsAppGlobalObject.jsApp = self;
     
-    NSLog(@"%s, inited app global: %@", __func__, self.jsAppGlobalObject);
+    //NSLog(@"%s, inited app global: %@", __func__, self.jsAppGlobalObject);
     
     // initialize available modules
     
@@ -92,7 +82,10 @@ NSString * const kENOJavaScriptErrorDomain = @"ENOJavaScriptErrorDomain";
         return module;
     };
     
-    self.jsContext[@"process"] = [[ENOJSProcess alloc] init];
+    self.jsContext[@"process"] = [[ENOJSProcess alloc] initWithVersions:@{
+                                                                          @"termipal": version
+                                                                          }];
+                                  
     self.jsContext[@"console"] = [[ENOJSConsole alloc] init];
     
     return self;
@@ -124,8 +117,6 @@ NSString * const kENOJavaScriptErrorDomain = @"ENOJavaScriptErrorDomain";
 {
     self.lastException = nil;
     
-    NSLog(@"%s...", __func__);
-    
     [self.jsContext evaluateScript:js];
     
     if (self.lastException) {
@@ -139,8 +130,6 @@ NSString * const kENOJavaScriptErrorDomain = @"ENOJavaScriptErrorDomain";
         }
         return NO; // --
     }
-    
-    NSLog(@"%s done", __func__);
     
     return YES;
 }

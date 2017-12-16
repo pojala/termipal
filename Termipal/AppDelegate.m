@@ -3,8 +3,22 @@
 //  TermStalker
 //
 //  Created by Pauli Ojala on 15/02/16.
-//  Copyright © 2016 Pauli Ojala. All rights reserved.
+//  Copyright © 2017 Pauli Olavi Ojala.
 //
+/*
+ Termipal is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+ 
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ 
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
 
 #import "AppDelegate.h"
 #import "ENOJavaScriptApp.h"
@@ -12,7 +26,6 @@
 
 @interface AppDelegate ()
 
-@property NSString *watchedAppId;
 @property ENOJavaScriptApp *jsApp;
 
 @end
@@ -39,6 +52,7 @@ static void logToStderr(NSString *str)
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
+#if 0
     // TESTING
     self.mainJSProgram = @""
     "const {app} = require('termipal');\n"
@@ -49,10 +63,15 @@ static void logToStderr(NSString *str)
     "    console.log(`view id: ${viewId}`);\n"
     "  }\n"
     "});"
+    "buttonClicked = () => {\n"
+    "  let uiValues = app.getCurrentUIValues();\n"
+    "  app.alert('popup selection is: '+uiValues.testPopup);\n"
+    "  app.openUrl('https://google.com');\n"
+    "}\n"
     ;
+#endif
     
     // set up window watching for Terminal
-    self.watchedAppId = @"com.apple.Terminal";
     self.axWindowWatcher = [[AxWindowWatcher alloc] initWithAppBundleId:self.watchedAppId floaterWindow:self.window];
     
     [[NSWorkspace sharedWorkspace] addObserver:self forKeyPath:@"runningApplications" options:0 context:NULL];
@@ -62,19 +81,21 @@ static void logToStderr(NSString *str)
     self.window.axWindowWatcher = self.axWindowWatcher;
     
     // set up the JS engine
-    ENOJavaScriptApp *jsApp = [ENOJavaScriptApp sharedApp];
-    jsApp.jsContext[@"__dirname"] = [[NSFileManager defaultManager] currentDirectoryPath];
+    self.jsApp = [[ENOJavaScriptApp alloc] initWithVersion:self.versionString];
+    self.jsApp.jsContext[@"__dirname"] = [[NSFileManager defaultManager] currentDirectoryPath];
+    self.jsApp.jsAppGlobalObject.palBaseViewController = self.window.baseViewController;
+    self.jsApp.jsAppGlobalObject.axWindowWatcher = self.axWindowWatcher;
+    self.jsApp.jsAppGlobalObject.UIDefinition = self.mainUIDefinition;
     
-    // load code
+    // load main script
     NSError *error = nil;
-    if ( ![jsApp loadMainJS:self.mainJSProgram error:&error]) {
+    if ( ![self.jsApp loadMainJS:self.mainJSProgram error:&error]) {
         logToStderr([NSString stringWithFormat:@"** Could not load JavaScript program: %@", error]);
         [NSApp terminate:nil]; // --
     }
-    self.jsApp = jsApp;
-
+    
     // send 'ready' event to the JS app
-    if ( ![jsApp.jsAppGlobalObject emitReady:&error]) {
+    if ( ![self.jsApp.jsAppGlobalObject emitReady:&error]) {
         logToStderr([NSString stringWithFormat:@"** Error executing app.on('ready') handler: %@", error]);
     }
     
@@ -98,6 +119,17 @@ static void logToStderr(NSString *str)
 {
     [self.axWindowWatcher.followedApp activateWithOptions:NSApplicationActivateIgnoringOtherApps];
     [NSApp terminate:nil];
+}
+
+- (void)performJSActionNamed:(NSString *)actionName
+{
+    @try {
+        JSValue *funcObj = self.jsApp.jsContext[actionName];
+        [funcObj callWithArguments:@[]];
+    }
+    @catch (NSException *exc) {
+        logToStderr([NSString stringWithFormat:@"** Exception while executing %@ handler: %@", actionName, exc]);
+    }
 }
 
 @end
