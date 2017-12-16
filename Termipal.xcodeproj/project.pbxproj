@@ -14,8 +14,8 @@
 		5A6F24441FE3BEC80021F933 /* AxWindowWatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6F24431FE3BEC80021F933 /* AxWindowWatcher.m */; };
 		5A6F24451FE3BEC80021F933 /* AxWindowWatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6F24431FE3BEC80021F933 /* AxWindowWatcher.m */; };
 		5A6F2AA11FE468520021F933 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A6F2AA01FE468520021F933 /* JavaScriptCore.framework */; };
-		5A6F2AA51FE468980021F933 /* ENOJavaScriptApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6F2AA41FE468970021F933 /* ENOJavaScriptApp.m */; };
-		5A6F2AA61FE468980021F933 /* ENOJavaScriptApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6F2AA41FE468970021F933 /* ENOJavaScriptApp.m */; };
+		5A6F2AA51FE468980021F933 /* PalJavaScriptMicroUIApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6F2AA41FE468970021F933 /* PalJavaScriptMicroUIApp.m */; };
+		5A6F2AA61FE468980021F933 /* PalJavaScriptMicroUIApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6F2AA41FE468970021F933 /* PalJavaScriptMicroUIApp.m */; };
 		5A6F2AAC1FE46A3D0021F933 /* PalJSApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6F2AAA1FE46A3D0021F933 /* PalJSApp.m */; };
 		5A6F2AAD1FE46A3D0021F933 /* PalJSApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6F2AAA1FE46A3D0021F933 /* PalJSApp.m */; };
 		5A6F2AB61FE46AA60021F933 /* ENOJSPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6F2AAF1FE46AA50021F933 /* ENOJSPath.m */; };
@@ -26,6 +26,10 @@
 		5A6F2ABB1FE46AA60021F933 /* ENOJSConsole.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6F2AB41FE46AA60021F933 /* ENOJSConsole.m */; };
 		5A6F2ABC1FE46AA60021F933 /* ENOJSProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6F2AB51FE46AA60021F933 /* ENOJSProcess.m */; };
 		5A6F2ABD1FE46AA60021F933 /* ENOJSProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6F2AB51FE46AA60021F933 /* ENOJSProcess.m */; };
+		5A6F2AC01FE5CF260021F933 /* PalJSMicroUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6F2ABF1FE5CF260021F933 /* PalJSMicroUI.m */; };
+		5A6F2AC11FE5CF260021F933 /* PalJSMicroUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6F2ABF1FE5CF260021F933 /* PalJSMicroUI.m */; };
+		5A6F2AC41FE5D7400021F933 /* PalJSDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6F2AC31FE5D7400021F933 /* PalJSDialog.m */; };
+		5A6F2AC51FE5D7400021F933 /* PalJSDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6F2AC31FE5D7400021F933 /* PalJSDialog.m */; };
 		5AB1A7D91FD3BF2B004345D1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A4D56021C726ADC0090B161 /* main.m */; };
 		5AB1A7DA1FD3BF2B004345D1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A4D55FF1C726ADB0090B161 /* AppDelegate.m */; };
 		5AB1A7DB1FD3BF2B004345D1 /* PalAttachedWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A4AFCBD1CA473AE0072C539 /* PalAttachedWindow.m */; };
@@ -64,8 +68,8 @@
 		5A6F24421FE3BEC80021F933 /* AxWindowWatcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AxWindowWatcher.h; sourceTree = "<group>"; };
 		5A6F24431FE3BEC80021F933 /* AxWindowWatcher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AxWindowWatcher.m; sourceTree = "<group>"; };
 		5A6F2AA01FE468520021F933 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		5A6F2AA31FE468970021F933 /* ENOJavaScriptApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ENOJavaScriptApp.h; sourceTree = "<group>"; };
-		5A6F2AA41FE468970021F933 /* ENOJavaScriptApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ENOJavaScriptApp.m; sourceTree = "<group>"; };
+		5A6F2AA31FE468970021F933 /* PalJavaScriptMicroUIApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PalJavaScriptMicroUIApp.h; sourceTree = "<group>"; };
+		5A6F2AA41FE468970021F933 /* PalJavaScriptMicroUIApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PalJavaScriptMicroUIApp.m; sourceTree = "<group>"; };
 		5A6F2AAA1FE46A3D0021F933 /* PalJSApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PalJSApp.m; sourceTree = "<group>"; };
 		5A6F2AAB1FE46A3D0021F933 /* PalJSApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PalJSApp.h; sourceTree = "<group>"; };
 		5A6F2AAE1FE46AA50021F933 /* ENOJSPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ENOJSPath.h; sourceTree = "<group>"; };
@@ -76,6 +80,10 @@
 		5A6F2AB31FE46AA60021F933 /* ENOJSConsole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ENOJSConsole.h; sourceTree = "<group>"; };
 		5A6F2AB41FE46AA60021F933 /* ENOJSConsole.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ENOJSConsole.m; sourceTree = "<group>"; };
 		5A6F2AB51FE46AA60021F933 /* ENOJSProcess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ENOJSProcess.m; sourceTree = "<group>"; };
+		5A6F2ABE1FE5CF260021F933 /* PalJSMicroUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PalJSMicroUI.h; sourceTree = "<group>"; };
+		5A6F2ABF1FE5CF260021F933 /* PalJSMicroUI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PalJSMicroUI.m; sourceTree = "<group>"; };
+		5A6F2AC21FE5D7400021F933 /* PalJSDialog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PalJSDialog.h; sourceTree = "<group>"; };
+		5A6F2AC31FE5D7400021F933 /* PalJSDialog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PalJSDialog.m; sourceTree = "<group>"; };
 		5AB1A7E31FD3BF2B004345D1 /* Termipal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Termipal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AB1A7E81FD3C654004345D1 /* pal */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = pal; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AB1A7EA1FD3C654004345D1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -160,10 +168,14 @@
 		5A6F2AA21FE468790021F933 /* JS Execution */ = {
 			isa = PBXGroup;
 			children = (
-				5A6F2AA31FE468970021F933 /* ENOJavaScriptApp.h */,
-				5A6F2AA41FE468970021F933 /* ENOJavaScriptApp.m */,
+				5A6F2AA31FE468970021F933 /* PalJavaScriptMicroUIApp.h */,
+				5A6F2AA41FE468970021F933 /* PalJavaScriptMicroUIApp.m */,
 				5A6F2AAB1FE46A3D0021F933 /* PalJSApp.h */,
 				5A6F2AAA1FE46A3D0021F933 /* PalJSApp.m */,
+				5A6F2ABE1FE5CF260021F933 /* PalJSMicroUI.h */,
+				5A6F2ABF1FE5CF260021F933 /* PalJSMicroUI.m */,
+				5A6F2AC21FE5D7400021F933 /* PalJSDialog.h */,
+				5A6F2AC31FE5D7400021F933 /* PalJSDialog.m */,
 				5A6F2AAE1FE46AA50021F933 /* ENOJSPath.h */,
 				5A6F2AAF1FE46AA50021F933 /* ENOJSPath.m */,
 				5A6F2AB01FE46AA50021F933 /* ENOJSUrl.h */,
@@ -276,13 +288,15 @@
 				5A6F24401FE337080021F933 /* PalBaseViewController.m in Sources */,
 				5A6F2ABC1FE46AA60021F933 /* ENOJSProcess.m in Sources */,
 				5A6F2AAC1FE46A3D0021F933 /* PalJSApp.m in Sources */,
+				5A6F2AC01FE5CF260021F933 /* PalJSMicroUI.m in Sources */,
 				5A6F243C1FE331DF0021F933 /* PalBaseView.m in Sources */,
 				5AB1A7D91FD3BF2B004345D1 /* main.m in Sources */,
 				5A6F2AB61FE46AA60021F933 /* ENOJSPath.m in Sources */,
+				5A6F2AC41FE5D7400021F933 /* PalJSDialog.m in Sources */,
 				5AB1A7DA1FD3BF2B004345D1 /* AppDelegate.m in Sources */,
 				5AB1A7DB1FD3BF2B004345D1 /* PalAttachedWindow.m in Sources */,
 				5A6F2AB81FE46AA60021F933 /* ENOJSUrl.m in Sources */,
-				5A6F2AA51FE468980021F933 /* ENOJavaScriptApp.m in Sources */,
+				5A6F2AA51FE468980021F933 /* PalJavaScriptMicroUIApp.m in Sources */,
 				5A6F2ABA1FE46AA60021F933 /* ENOJSConsole.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,13 +309,15 @@
 				5A6F24411FE337080021F933 /* PalBaseViewController.m in Sources */,
 				5A6F2ABD1FE46AA60021F933 /* ENOJSProcess.m in Sources */,
 				5A6F2AAD1FE46A3D0021F933 /* PalJSApp.m in Sources */,
+				5A6F2AC11FE5CF260021F933 /* PalJSMicroUI.m in Sources */,
 				5A6F243D1FE331DF0021F933 /* PalBaseView.m in Sources */,
 				5AB1A7EF1FD3C6DB004345D1 /* PalAttachedWindow.m in Sources */,
 				5A6F2AB71FE46AA60021F933 /* ENOJSPath.m in Sources */,
+				5A6F2AC51FE5D7400021F933 /* PalJSDialog.m in Sources */,
 				5AB1A7EB1FD3C654004345D1 /* main.m in Sources */,
 				5AB1A7F01FD3C6E4004345D1 /* AppDelegate.m in Sources */,
 				5A6F2AB91FE46AA60021F933 /* ENOJSUrl.m in Sources */,
-				5A6F2AA61FE468980021F933 /* ENOJavaScriptApp.m in Sources */,
+				5A6F2AA61FE468980021F933 /* PalJavaScriptMicroUIApp.m in Sources */,
 				5A6F2ABB1FE46AA60021F933 /* ENOJSConsole.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

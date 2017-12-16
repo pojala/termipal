@@ -27,10 +27,9 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        const char *versionStr = "0.0.1";
+        const char *versionStr = "0.0.2";
         
         // -- get command line args
-        NSString *uiJSON = nil;
         NSString *programJS = nil;
         for (int i = 1; i < argc; i++) {
             if (0 == strcmp(argv[i], "--version")) {
@@ -39,20 +38,9 @@ int main(int argc, const char * argv[]) {
                        , versionStr);
                 exit(0);
             }
-            if (0 == strcmp(argv[i], "--ui") && i < argc-1) {
-                uiJSON = [NSString stringWithUTF8String:argv[++i]];
-            }
             else if (0 == strcmp(argv[i], "--js") && i < argc-1) {
                 programJS = [NSString stringWithUTF8String:argv[++i]];
-            }
-            else if (0 == strcmp(argv[i], "--ui-file") && i < argc-1) {
-                NSString *path = [NSString stringWithUTF8String:argv[++i]];
-                NSError *err = nil;
-                uiJSON = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:&err];
-                if (err) {
-                    fprintf(stderr, "** error reading UI file: %s\n", err.description.UTF8String);
-                    return (int)err.code; // --
-                }
+                continue;
             }
             else if (0 == strcmp(argv[i], "--js-file") && i < argc-1) {
                 NSString *path = [NSString stringWithUTF8String:argv[++i]];
@@ -62,18 +50,25 @@ int main(int argc, const char * argv[]) {
                     fprintf(stderr, "** error reading JS file: %s\n", err.description.UTF8String);
                     return (int)err.code; // --
                 }
+                continue;
+            }
+            
+            NSString *path = [NSString stringWithUTF8String:argv[i]];
+            if ([path.lowercaseString rangeOfString:@".js"].location != NSNotFound) {
+                NSError *err = nil;
+                programJS = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:&err];
+                if (err) {
+                    fprintf(stderr, "** error reading JS file: %s\n", err.description.UTF8String);
+                    return (int)err.code; // --
+                }
             }
         }
-        if (uiJSON.length < 1) {
-#if 0
-            uiJSON = @"{}";
-#else
+        if (programJS.length < 1) {
             fprintf(stderr,
-                    "** No UI JSON provided. Please use either --ui or --ui-file.\n"
-                    "To provide a JavaScript program, use either --js or --js-file.\n"
+                    "** No JavaScript program provided.\n"
+                    "Please use either --js to provide an inline script, or just pass a .js file as argument.\n"
                     "For version info, use --version.\n");
             return 3; // --
-#endif
         }
         
         
@@ -98,13 +93,8 @@ int main(int argc, const char * argv[]) {
         PalAttachedWindow *window = [[PalAttachedWindow alloc] init];
         appDelegate.window = window;
         
-        if ( ![window.baseViewController buildUIFromJSON:uiJSON]) {
-            return 31;
-        }
-        
         appDelegate.watchedAppId = terminalAppId;
         appDelegate.versionString = [NSString stringWithUTF8String:versionStr];
-        appDelegate.mainUIDefinition = window.baseViewController.uiDefinition;
         appDelegate.mainJSProgram = programJS ?: @"";
 
         [NSApp run];

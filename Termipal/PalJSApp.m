@@ -22,7 +22,7 @@
 
 #import <AppKit/AppKit.h>
 #import "PalJSApp.h"
-#import "ENOJavaScriptApp.h"
+#import "PalJavaScriptMicroUIApp.h"
 #import "PalBaseViewController.h"
 #import "AxWindowWatcher.h"
 
@@ -90,7 +90,7 @@
         
         if (self.jsApp.lastException) {
             if (outError) {
-                *outError = [NSError errorWithDomain:kENOJavaScriptErrorDomain
+                *outError = [NSError errorWithDomain:kPalJavaScriptErrorDomain
                                                 code:102
                                             userInfo:@{
                                                        NSLocalizedDescriptionKey: self.jsApp.lastException,
@@ -106,15 +106,19 @@
 - (BOOL)emitExitWithUIValues:(NSDictionary *)uiValues error:(NSError **)outError
 {
     self.jsApp.lastException = nil;
+    self.exitCode = 0;
     
     for (JSValue *cb in self.eventCallbacks[@"exit"]) {
         //NSLog(@"%s, %@", __func__, cb);
         
-        [cb callWithArguments:@[uiValues ?: @""]];
+        JSValue *ret = [cb callWithArguments:@[uiValues ?: @""]];
+        if (ret.isNumber) {
+            self.exitCode = ret.toInt32;
+        }
         
         if (self.jsApp.lastException) {
             if (outError) {
-                *outError = [NSError errorWithDomain:kENOJavaScriptErrorDomain
+                *outError = [NSError errorWithDomain:kPalJavaScriptErrorDomain
                                                 code:102
                                             userInfo:@{
                                                        NSLocalizedDescriptionKey: self.jsApp.lastException,

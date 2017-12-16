@@ -28,7 +28,7 @@
 
 @interface PalBaseViewController ()
 
-@property (nonatomic, strong) NSArray *uiDefinition;
+@property (nonatomic, strong) NSArray *UIDefinition;
 
 @property (nonatomic, strong) NSMutableDictionary *viewIdsByTag;
 @property (nonatomic, strong) NSMutableDictionary *actionHandlersByViewId;
@@ -46,17 +46,6 @@
     self = [super init];
     
     self.view = [[PalBaseView alloc] initWithFrame:NSMakeRect(0, 0, 100, 100)];
-    
-    NSButton *closeButton = [[NSButton alloc] initWithFrame:NSMakeRect(78, 7, 16, 16)];
-    closeButton.cell.bezeled = NO;
-    closeButton.cell.bordered = NO;
-    closeButton.image = [NSImage imageNamed:@"NSGoForwardTemplate"];
-    closeButton.autoresizingMask = (NSViewMinXMargin);
-    [self.view addSubview:closeButton];
-    self.closeButton = closeButton;
-    
-    closeButton.target = NSApp.delegate;
-    closeButton.action = @selector(exitAndReactivateOriginal);
     
     self.actionResultValuesByViewId = [NSMutableDictionary dictionary];
     
@@ -85,27 +74,37 @@
 #if 0
     // TEST
     viewDescs = @[
-            @{
-                @"type": @"label",
-                @"text": @"Choose server:"
-                },
-            @{
-                @"id": @"testPopup",
-                @"type": @"popup",
-                @"items": @[
-                        
-                        ]
-                },
-            @{
-                @"id": @"button1",
-                @"type": @"button",
-                @"text": @"Show help",
-                @"action": @"buttonClicked",
-                },
-            ];
+                  @{
+                      @"type": @"label",
+                      @"text": @"Choose server:"
+                      },
+                  @{
+                      @"id": @"testPopup",
+                      @"type": @"popup",
+                      @"items": @[
+                              
+                              ]
+                      },
+                  @{
+                      @"id": @"button1",
+                      @"type": @"button",
+                      @"text": @"Show help",
+                      @"action": @"buttonClicked",
+                      },
+                  ];
 #endif
+
+    return [self buildUIFromUIDefinition:viewDescs];
+}
+
+- (BOOL)buildUIFromUIDefinition:(NSArray *)viewDescs
+{
+    NSArray *subviews = self.view.subviews.copy;
+    for (NSView *view in subviews) {
+        [view removeFromSuperview];
+    }
     
-    self.uiDefinition = viewDescs;
+    self.UIDefinition = viewDescs;
     self.viewIdsByTag = [NSMutableDictionary dictionary];
     self.actionHandlersByViewId = [NSMutableDictionary dictionary];
     NSInteger tag = 1000;
@@ -219,6 +218,18 @@
         tag++;
         x += w + xIntv;
     }
+    
+    // always add close button
+    NSButton *closeButton = [[NSButton alloc] initWithFrame:NSMakeRect(self.view.bounds.size.width - 22, 7, 16, 16)];
+    closeButton.cell.bezeled = NO;
+    closeButton.cell.bordered = NO;
+    closeButton.image = [NSImage imageNamed:@"NSGoForwardTemplate"];
+    closeButton.autoresizingMask = (NSViewMinXMargin);
+    [self.view addSubview:closeButton];
+    self.closeButton = closeButton;
+    
+    closeButton.target = NSApp.delegate;
+    closeButton.action = @selector(exitAndReactivateOriginal);
     
     return YES;
 }

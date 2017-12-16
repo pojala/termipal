@@ -27,8 +27,9 @@
 @property (nonatomic) NSButton *closeButton;
 
 - (BOOL)buildUIFromJSON:(NSString *)json;
+- (BOOL)buildUIFromUIDefinition:(NSArray *)viewDescs;
 
-@property (nonatomic, readonly) NSArray *uiDefinition;
+@property (nonatomic, readonly) NSArray *UIDefinition;
 @property (nonatomic, readonly) NSDictionary *actionResultValuesByViewId;
 
 @end

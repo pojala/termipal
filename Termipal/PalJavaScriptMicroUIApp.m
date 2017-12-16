@@ -1,39 +1,55 @@
 //
-//  ENOJavaScriptApp.m
-//  Electrino
+//  PalJavaScriptMicroUIApp.m
+//  Termipal
 //
 //  Created by Pauli Olavi Ojala on 03/05/17.
 //  Copyright © 2017 Pauli Olavi Ojala.
 //
-//  This software may be modified and distributed under the terms of the MIT license.  See the LICENSE file for details.
-//
+/*
+ Termipal is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+ 
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ 
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
 
-#import "ENOJavaScriptApp.h"
+#import "PalJavaScriptMicroUIApp.h"
 #import "ENOJSPath.h"
 #import "ENOJSUrl.h"
 #import "PalJSApp.h"
 #import "ENOJSProcess.h"
 #import "ENOJSConsole.h"
+#import "PalJSMicroUI.h"
+#import "PalJSDialog.h"
 
 
-NSString * const kENOJavaScriptErrorDomain = @"ENOJavaScriptErrorDomain";
+NSString * const kPalJavaScriptErrorDomain = @"PalJavaScriptErrorDomain";
 
 
-@interface ENOJavaScriptApp ()
+@interface PalJavaScriptMicroUIApp ()
 
 @property (nonatomic, strong) JSVirtualMachine *jsVM;
 @property (nonatomic, strong) JSContext *jsContext;
 @property (nonatomic, strong) NSDictionary *jsModules;
 @property (nonatomic, strong) PalJSApp *jsAppGlobalObject;
+@property (nonatomic, strong) PalJSMicroUI *jsMicroUI;
+@property (nonatomic, strong) PalJSDialog *jsDialog;
 
 @property (nonatomic, assign) BOOL inException;
 
 @end
 
 
-@implementation ENOJavaScriptApp
+@implementation PalJavaScriptMicroUIApp
 
-- (id)initWithVersion:(NSString *)version
+- (id)initWithVersion:(NSString *)version microUIViewController:(PalBaseViewController *)viewCtrl
 {
     self = [super init];
     
@@ -44,6 +60,11 @@ NSString * const kENOJavaScriptErrorDomain = @"ENOJavaScriptErrorDomain";
     self.jsAppGlobalObject = [[PalJSApp alloc] init];
     self.jsAppGlobalObject.jsApp = self;
     
+    self.jsMicroUI = [[PalJSMicroUI alloc] init];
+    self.jsMicroUI.palBaseViewController = viewCtrl;
+    
+    self.jsDialog = [[PalJSDialog alloc] init];
+    
     //NSLog(@"%s, inited app global: %@", __func__, self.jsAppGlobalObject);
     
     // initialize available modules
@@ -53,14 +74,14 @@ NSString * const kENOJavaScriptErrorDomain = @"ENOJavaScriptErrorDomain";
     modules[@"termipal"] = @{
                               // singletons
                               @"app": self.jsAppGlobalObject,
+                              @"microUI": self.jsMicroUI,
+                              @"dialog": self.jsDialog,
                               /*
                               @"ipcMain": self.jsIPCMain,
                               @"nativeImage": [[ENOJSNativeImageAPI alloc] init],
+                              */
                               
                               // classes that can be constructed
-                              @"BrowserWindow": [ENOJSBrowserWindow class],
-                              @"Tray": [ENOJSTray class],
-                               */
                               };
     
     modules[@"path"] = [[ENOJSPath alloc] init];
@@ -71,7 +92,7 @@ NSString * const kENOJavaScriptErrorDomain = @"ENOJavaScriptErrorDomain";
     
     // add exception handler and global functions
     
-    __block __weak ENOJavaScriptApp *weakSelf = self;
+    __block __weak PalJavaScriptMicroUIApp *weakSelf = self;
     
     self.jsContext.exceptionHandler = ^(JSContext *context, JSValue *exception) {
         [weakSelf _jsException:exception];
@@ -121,7 +142,7 @@ NSString * const kENOJavaScriptErrorDomain = @"ENOJavaScriptErrorDomain";
     
     if (self.lastException) {
         if (outError) {
-            *outError = [NSError errorWithDomain:kENOJavaScriptErrorDomain
+            *outError = [NSError errorWithDomain:kPalJavaScriptErrorDomain
                                            code:101
                                        userInfo:@{
                                                   NSLocalizedDescriptionKey: self.lastException,

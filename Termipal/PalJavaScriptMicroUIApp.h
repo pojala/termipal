@@ -1,5 +1,5 @@
 //
-//  PalJSApp.h
+//  PalJavaScriptMicroUIApp.h
 //  Termipal
 //
 //  Created by Pauli Olavi Ojala on 03/05/17.
@@ -22,32 +22,25 @@
 
 #import <Foundation/Foundation.h>
 #import <JavaScriptCore/JavaScriptCore.h>
-@class PalJavaScriptMicroUIApp;
-@class PalBaseViewController;
-@class AxWindowWatcher;
+#import "PalJSApp.h"
+#import "PalBaseViewController.h"
 
 
-@protocol PalJSAppExports <JSExport>
-
-JSExportAs(on,
-- (void)on:(NSString *)event withCallback:(JSValue *)cb
-);
-
-@property (nonatomic, copy) void(^openUrl)(NSString *);
-@property (nonatomic, copy) void(^alert)(NSString *);
-
-@end
+extern NSString * const kPalJavaScriptErrorDomain;
 
 
-@interface PalJSApp : NSObject <PalJSAppExports>
+@interface PalJavaScriptMicroUIApp : NSObject
 
-@property (nonatomic, weak) PalJavaScriptMicroUIApp *jsApp;
-@property (nonatomic, weak) PalBaseViewController *palBaseViewController;
-@property (nonatomic, weak) AxWindowWatcher *axWindowWatcher;
+- (id)initWithVersion:(NSString *)version microUIViewController:(PalBaseViewController *)viewCtrl;
 
-- (BOOL)emitReady:(NSError **)outError;
+@property (nonatomic, readonly) JSContext *jsContext;
 
-- (BOOL)emitExitWithUIValues:(NSDictionary *)uiValues error:(NSError **)outError;
-@property (nonatomic) int exitCode;
+@property (nonatomic, readonly) PalJSApp *jsAppGlobalObject;
+
+@property (nonatomic, strong) NSString *lastException;
+@property (nonatomic, assign) NSInteger lastExceptionLine;
+
+
+- (BOOL)loadMainJS:(NSString *)js error:(NSError **)outError;
 
 @end

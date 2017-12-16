@@ -21,12 +21,12 @@
  */
 
 #import "AppDelegate.h"
-#import "ENOJavaScriptApp.h"
+#import "PalJavaScriptMicroUIApp.h"
 
 
 @interface AppDelegate ()
 
-@property ENOJavaScriptApp *jsApp;
+@property PalJavaScriptMicroUIApp *jsApp;
 
 @end
 
@@ -81,11 +81,13 @@ static void logToStderr(NSString *str)
     self.window.axWindowWatcher = self.axWindowWatcher;
     
     // set up the JS engine
-    self.jsApp = [[ENOJavaScriptApp alloc] initWithVersion:self.versionString];
+    self.jsApp = [[PalJavaScriptMicroUIApp alloc] initWithVersion:self.versionString
+                                            microUIViewController:self.window.baseViewController];
+    
     self.jsApp.jsContext[@"__dirname"] = [[NSFileManager defaultManager] currentDirectoryPath];
+    
     self.jsApp.jsAppGlobalObject.palBaseViewController = self.window.baseViewController;
     self.jsApp.jsAppGlobalObject.axWindowWatcher = self.axWindowWatcher;
-    self.jsApp.jsAppGlobalObject.UIDefinition = self.mainUIDefinition;
     
     // load main script
     NSError *error = nil;
@@ -111,7 +113,9 @@ static void logToStderr(NSString *str)
     if ( ![self.jsApp.jsAppGlobalObject emitExitWithUIValues:uiValues error:&error]) {
         logToStderr([NSString stringWithFormat:@"** Error executing app.on('exit') handler: %@", error]);
     }
-
+    if (self.jsApp.jsAppGlobalObject.exitCode != 0) {
+        exit(self.jsApp.jsAppGlobalObject.exitCode);  // --
+    }
 }
 
 
