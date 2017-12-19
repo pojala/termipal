@@ -26,7 +26,7 @@
 @protocol PalJSDialogExports <JSExport>
 
 JSExportAs(showOpenDialog,
-- (void)showOpenDialogWithProperties:(NSDictionary *)props callback:(JSValue *)cb
+- (void)showOpenDialogWithOptions:(NSDictionary *)opts callback:(JSValue *)cb
 );
 
 @end

@@ -38,6 +38,8 @@
 		5AB1A7EB1FD3C654004345D1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AB1A7EA1FD3C654004345D1 /* main.m */; };
 		5AB1A7EF1FD3C6DB004345D1 /* PalAttachedWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A4AFCBD1CA473AE0072C539 /* PalAttachedWindow.m */; };
 		5AB1A7F01FD3C6E4004345D1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A4D55FF1C726ADB0090B161 /* AppDelegate.m */; };
+		5AC4BDB21FE8667E00E0CD50 /* ENOJSProcessFdSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC4BDB11FE8667E00E0CD50 /* ENOJSProcessFdSocket.m */; };
+		5AC4BDB31FE8667E00E0CD50 /* ENOJSProcessFdSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC4BDB11FE8667E00E0CD50 /* ENOJSProcessFdSocket.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -87,6 +89,8 @@
 		5AB1A7E31FD3BF2B004345D1 /* Termipal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Termipal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AB1A7E81FD3C654004345D1 /* pal */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = pal; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AB1A7EA1FD3C654004345D1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5AC4BDB01FE8667E00E0CD50 /* ENOJSProcessFdSocket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ENOJSProcessFdSocket.h; sourceTree = "<group>"; };
+		5AC4BDB11FE8667E00E0CD50 /* ENOJSProcessFdSocket.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ENOJSProcessFdSocket.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +180,14 @@
 				5A6F2ABF1FE5CF260021F933 /* PalJSMicroUI.m */,
 				5A6F2AC21FE5D7400021F933 /* PalJSDialog.h */,
 				5A6F2AC31FE5D7400021F933 /* PalJSDialog.m */,
+				5A6F2AC61FE67B740021F933 /* JS impls from Electrino */,
+			);
+			name = "JS Execution";
+			sourceTree = "<group>";
+		};
+		5A6F2AC61FE67B740021F933 /* JS impls from Electrino */ = {
+			isa = PBXGroup;
+			children = (
 				5A6F2AAE1FE46AA50021F933 /* ENOJSPath.h */,
 				5A6F2AAF1FE46AA50021F933 /* ENOJSPath.m */,
 				5A6F2AB01FE46AA50021F933 /* ENOJSUrl.h */,
@@ -184,8 +196,10 @@
 				5A6F2AB41FE46AA60021F933 /* ENOJSConsole.m */,
 				5A6F2AB21FE46AA60021F933 /* ENOJSProcess.h */,
 				5A6F2AB51FE46AA60021F933 /* ENOJSProcess.m */,
+				5AC4BDB01FE8667E00E0CD50 /* ENOJSProcessFdSocket.h */,
+				5AC4BDB11FE8667E00E0CD50 /* ENOJSProcessFdSocket.m */,
 			);
-			name = "JS Execution";
+			name = "JS impls from Electrino";
 			sourceTree = "<group>";
 		};
 		5AB1A7E91FD3C654004345D1 /* TermipalUtil */ = {
@@ -298,6 +312,7 @@
 				5A6F2AB81FE46AA60021F933 /* ENOJSUrl.m in Sources */,
 				5A6F2AA51FE468980021F933 /* PalJavaScriptMicroUIApp.m in Sources */,
 				5A6F2ABA1FE46AA60021F933 /* ENOJSConsole.m in Sources */,
+				5AC4BDB21FE8667E00E0CD50 /* ENOJSProcessFdSocket.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,6 +334,7 @@
 				5A6F2AB91FE46AA60021F933 /* ENOJSUrl.m in Sources */,
 				5A6F2AA61FE468980021F933 /* PalJavaScriptMicroUIApp.m in Sources */,
 				5A6F2ABB1FE46AA60021F933 /* ENOJSConsole.m in Sources */,
+				5AC4BDB31FE8667E00E0CD50 /* ENOJSProcessFdSocket.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

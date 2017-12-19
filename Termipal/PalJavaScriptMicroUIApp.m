@@ -92,7 +92,7 @@ NSString * const kPalJavaScriptErrorDomain = @"PalJavaScriptErrorDomain";
     
     // add exception handler and global functions
     
-    __block __weak PalJavaScriptMicroUIApp *weakSelf = self;
+    __weak PalJavaScriptMicroUIApp *weakSelf = self;
     
     self.jsContext.exceptionHandler = ^(JSContext *context, JSValue *exception) {
         [weakSelf _jsException:exception];
@@ -103,9 +103,18 @@ NSString * const kPalJavaScriptErrorDomain = @"PalJavaScriptErrorDomain";
         return module;
     };
     
-    self.jsContext[@"process"] = [[ENOJSProcess alloc] initWithVersions:@{
-                                                                          @"termipal": version
-                                                                          }];
+    ENOJSProcess *jsProcess = [[ENOJSProcess alloc] initWithVersions:@{ @"termipal": version }];
+    jsProcess.cwd = [NSFileManager defaultManager].currentDirectoryPath;
+    jsProcess.argv = [NSProcessInfo processInfo].arguments;
+    jsProcess.env = [NSProcessInfo processInfo].environment;
+    self.jsContext[@"process"] = jsProcess;
+    
+    // stdout/stderr properties need to be manually patched onto the process object
+    // because they are macros on C side and can't be used as property names.
+    [self.jsContext evaluateScript:@""
+     "process.stdout = process.getStdoutFdSocket();"
+     "process.stderr = process.getStderrFdSocket();"
+     ];
                                   
     self.jsContext[@"console"] = [[ENOJSConsole alloc] init];
     
@@ -120,8 +129,6 @@ NSString * const kPalJavaScriptErrorDomain = @"PalJavaScriptErrorDomain";
 
 - (void)_jsException:(JSValue *)exception
 {
-    NSLog(@"%s, %@", __func__, exception);
-    
     if (self.inException) {  // prevent recursion, just in case
         return; // --
     }

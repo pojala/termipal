@@ -112,9 +112,10 @@
     double w;
     double x = 9;
     double yMargin = 4;
-    double xIntv = 4;
+    double xIntv = 6;
     NSControlSize controlSize = NSControlSizeSmall;
     NSFont *systemFont = [NSFont systemFontOfSize:[NSFont systemFontSizeForControlSize:controlSize]];
+    BOOL prevIsLabel = NO;
     
     // white shadow makes text more legible against NSVisualEffectView's blurred background
     NSShadow *textShadow = [[NSShadow alloc] init];
@@ -131,8 +132,8 @@
         NSString *type = desc[@"type"];
         NSString *viewId = desc[@"id"];
         
-        w = 0;
         id defaultVal = nil;
+        w = 0;
         
         if ([type isEqualToString:@"label"]) {
             NSString *text = desc[@"text"] ?: @"";
@@ -143,7 +144,7 @@
                                     };
             NSSize size = [text sizeWithAttributes:attrs];
             w = ceil(size.width) + 4;
-            frame = NSMakeRect(x, yMargin + 2, w, 15);
+            frame = NSMakeRect(x, yMargin + 4, w, 14);
             
             NSTextField *field = [[NSTextField alloc] initWithFrame:frame];
             field.drawsBackground = NO;
@@ -153,6 +154,7 @@
             field.attributedStringValue = [[NSAttributedString alloc] initWithString:text attributes:attrs];
             field.tag = tag;
             [self.view addSubview:field];
+            prevIsLabel = YES;
         }
         else if ([type isEqualToString:@"button"]) {
             NSString *text = desc[@"text"] ?: @"";
@@ -172,8 +174,12 @@
             button.target = self;
             button.action = @selector(buttonAction:);
             [self.view addSubview:button];
+            prevIsLabel = NO;
         }
         else if ([type isEqualToString:@"popup"]) {
+            if (prevIsLabel)
+                x -= 5;  // smaller margin between label and popup
+            
             w = 160;
             frame = NSMakeRect(x, yMargin, w, 20);
             
@@ -199,7 +205,9 @@
             popup.menu = menu;
             popup.tag = tag;
             
-            defaultVal = @(0);
+            defaultVal = desc[@"defaultValue"] ?: @(0);
+            [popup selectItemAtIndex:[defaultVal integerValue]];
+            prevIsLabel = NO;
         }
         
         if (viewId) {

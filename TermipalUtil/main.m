@@ -28,6 +28,7 @@
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         const char *versionStr = "0.0.2";
+        NSString *mainJSDir = [[NSFileManager defaultManager] currentDirectoryPath];
         
         // -- get command line args
         NSString *programJS = nil;
@@ -50,6 +51,7 @@ int main(int argc, const char * argv[]) {
                     fprintf(stderr, "** error reading JS file: %s\n", err.description.UTF8String);
                     return (int)err.code; // --
                 }
+                mainJSDir = [path stringByDeletingLastPathComponent];
                 continue;
             }
             
@@ -61,13 +63,19 @@ int main(int argc, const char * argv[]) {
                     fprintf(stderr, "** error reading JS file: %s\n", err.description.UTF8String);
                     return (int)err.code; // --
                 }
+                mainJSDir = [path stringByDeletingLastPathComponent];
+                continue;
             }
         }
         if (programJS.length < 1) {
             fprintf(stderr,
-                    "** No JavaScript program provided.\n"
+                    "\n** No JavaScript program provided.\n"
                     "Please use either --js to provide an inline script, or just pass a .js file as argument.\n"
-                    "For version info, use --version.\n");
+                    "For version, copyright and author info, use --version.\n"
+                    "\nWhen Termipal is running, it attaches a so-called 'MicroUI' window to your terminal.\n"
+                    "To exit Termipal, either click on the arrow at the right-side end of its window, or just double-click the window.\n"
+                    "\n"
+                    );
             return 3; // --
         }
         
@@ -96,6 +104,7 @@ int main(int argc, const char * argv[]) {
         appDelegate.watchedAppId = terminalAppId;
         appDelegate.versionString = [NSString stringWithUTF8String:versionStr];
         appDelegate.mainJSProgram = programJS ?: @"";
+        appDelegate.mainJSDir = mainJSDir;
 
         [NSApp run];
         

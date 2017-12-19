@@ -84,7 +84,7 @@ static void logToStderr(NSString *str)
     self.jsApp = [[PalJavaScriptMicroUIApp alloc] initWithVersion:self.versionString
                                             microUIViewController:self.window.baseViewController];
     
-    self.jsApp.jsContext[@"__dirname"] = [[NSFileManager defaultManager] currentDirectoryPath];
+    self.jsApp.jsContext[@"__dirname"] = self.mainJSDir;
     
     self.jsApp.jsAppGlobalObject.palBaseViewController = self.window.baseViewController;
     self.jsApp.jsAppGlobalObject.axWindowWatcher = self.axWindowWatcher;

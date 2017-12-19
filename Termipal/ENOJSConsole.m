@@ -14,6 +14,8 @@
 @implementation ENOJSConsole
 
 @synthesize log;
+@synthesize error;
+@synthesize warn;
 
 - (id)init
 {
@@ -29,6 +31,17 @@
         
         fprintf(stdout, "%s\n", str.UTF8String);
     };
+    self.error = ^(NSString *str){
+        NSArray *args = [JSContext currentArguments];
+        
+        if (args.count > 1) {
+            NSString *argsStr = [[args subarrayWithRange:NSMakeRange(1, args.count - 1)] componentsJoinedByString:@", "];
+            str = [str stringByAppendingFormat:@" %@", argsStr];
+        }
+        
+        fprintf(stderr, "%s\n", str.UTF8String);
+    };
+    self.warn = self.error;
     
     return self;
 }

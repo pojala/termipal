@@ -11,10 +11,19 @@
 #import "ENOJSProcess.h"
 
 
+@interface ENOJSProcess ()
+@property (nonatomic) ENOJSProcessFdSocket *stdoutFdSocket;
+@property (nonatomic) ENOJSProcessFdSocket *stderrFdSocket;
+@end
+
+
 @implementation ENOJSProcess
 
 @synthesize platform;
 @synthesize versions;
+@synthesize cwd;
+@synthesize argv;
+@synthesize env;
 
 
 - (id)initWithVersions:(NSDictionary *)versions
@@ -25,7 +34,21 @@
     
     self.versions = versions;
     
+    self.stdoutFdSocket = [[ENOJSProcessFdSocket alloc] initWithFilePtr:stdout];
+    self.stderrFdSocket = [[ENOJSProcessFdSocket alloc] initWithFilePtr:stderr];
+    
     return self;
+}
+
+
+- (id)getStdoutFdSocket
+{
+    return self.stdoutFdSocket;
+}
+
+- (id)getStderrFdSocket
+{
+    return self.stderrFdSocket;
 }
 
 @end

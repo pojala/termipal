@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5AB1A7E71FD3C654004345D1"
-               BuildableName = "TermipalUtil"
+               BuildableName = "pal"
                BlueprintName = "TermipalUtil"
                ReferencedContainer = "container:Termipal.xcodeproj">
             </BuildableReference>
@@ -34,7 +34,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5AB1A7E71FD3C654004345D1"
-            BuildableName = "TermipalUtil"
+            BuildableName = "pal"
             BlueprintName = "TermipalUtil"
             ReferencedContainer = "container:Termipal.xcodeproj">
          </BuildableReference>
@@ -58,7 +58,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5AB1A7E71FD3C654004345D1"
-            BuildableName = "TermipalUtil"
+            BuildableName = "pal"
             BlueprintName = "TermipalUtil"
             ReferencedContainer = "container:Termipal.xcodeproj">
          </BuildableReference>
@@ -77,7 +77,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5AB1A7E71FD3C654004345D1"
-            BuildableName = "TermipalUtil"
+            BuildableName = "pal"
             BlueprintName = "TermipalUtil"
             ReferencedContainer = "container:Termipal.xcodeproj">
          </BuildableReference>

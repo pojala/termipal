@@ -15,6 +15,8 @@
 @protocol ENOJSConsoleExports <JSExport>
 
 @property (nonatomic, copy) void (^log)(NSString *str);
+@property (nonatomic, copy) void (^error)(NSString *str);
+@property (nonatomic, copy) void (^warn)(NSString *str);
 
 @end
 

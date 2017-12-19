@@ -34,8 +34,7 @@
 @property (strong) NSString *versionString;
 @property (strong) NSString *watchedAppId;
 @property (strong) NSString *mainJSProgram;
-@property (strong) NSArray *mainUIDefinition;
-
+@property (strong) NSString *mainJSDir;
 
 - (void)exitAndReactivateOriginal;
 
