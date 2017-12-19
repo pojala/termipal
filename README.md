@@ -32,8 +32,10 @@ For creating UIs, a new module called microUI is provided. To update the Termipa
 
 ### Website
 
-The Termipal website is at: https://termipal.sh
+Find install instructions, FAQ and more at the Termipal website.
+
+It's at: https://termipal.sh
 
 ### Contact
 
-Pauli Olavi Ojala / @pauliooj / pauli @ lacquer.fi
+Pauli Olavi Ojala / [@pauliooj](https://twitter.com/pauliooj) / pauli @ lacquer.fi
